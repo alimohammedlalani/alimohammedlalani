@@ -57,7 +57,7 @@ Right now, I’m focused on building strong frontend projects while developing s
 
 <div align="center">
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit%20Website-0ea5e9?style=for-the-badge&logo=safari&logoColor=white)](https://www.alimohammedlalani.netlify.app)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit%20Website-0ea5e9?style=for-the-badge&logo=safari&logoColor=white)](https://alimohammedlalani.netlify.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Mohammed%20Lalani-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ali-mohammed-lalani)
 [![Instagram](https://img.shields.io/badge/Instagram-@ali__mohammed__lalani-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/ali_mohammed_lalani)
 [![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:alimohammedlalanis@gmail.com)
