@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 740" width="1400" height="740">
+  <defs>
+    <style>
+      .drift-a{animation:driftA 26s ease-in-out infinite;}
+      .drift-b{animation:driftB 22s ease-in-out infinite;}
+      .sheen1{animation:sweep 10s cubic-bezier(.4,0,.2,1) .5s infinite;}
+      .sheen2{animation:sweep 10s cubic-bezier(.4,0,.2,1) 2.2s infinite;}
+      .sheen3{animation:sweep 10s cubic-bezier(.4,0,.2,1) 3.9s infinite;}
+      .route-flow{animation:flow 3.2s linear infinite;}
+      .node-pulse{animation:pulse 3.6s ease-in-out infinite;}
+      .wave-pulse{animation:pulse 4.2s ease-in-out infinite;}
+      .dot-a{animation:pulse 2.6s ease-in-out infinite;}
+      .dot-b{animation:pulse 2.6s ease-in-out .4s infinite;}
+      .dot-c{animation:pulse 2.6s ease-in-out .8s infinite;}
+      @keyframes driftA{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,14px)}}
+      @keyframes driftB{0%,100%{transform:translate(0,0)}50%{transform:translate(18px,-16px)}}
+      @keyframes sweep{0%{transform:translateX(-120%) skewX(-12deg)}25%,100%{transform:translateX(260%) skewX(-12deg)}}
+      @keyframes flow{to{stroke-dashoffset:-40;}}
+      @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+    </style>
+
+    <linearGradient id="w-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070A10"/>
+      <stop offset=".55" stop-color="#0B121C"/>
+      <stop offset="1" stop-color="#0D1117"/>
+    </linearGradient>
+    <radialGradient id="w-ambientA" cx="86%" cy="16%" r="45%">
+      <stop offset="0" stop-color="#38BDF8" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="w-ambientB" cx="16%" cy="88%" r="42%">
+      <stop offset="0" stop-color="#A78BFA" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="w-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".055"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity=".012"/>
+    </linearGradient>
+    <linearGradient id="w-edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5EEAD4" stop-opacity=".22"/>
+      <stop offset=".55" stop-color="#FFFFFF" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#818CF8" stop-opacity=".12"/>
+    </linearGradient>
+    <linearGradient id="w-sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#FFFFFF" stop-opacity=".055"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="w-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5EEAD4"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="w-cyan" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+    <linearGradient id="w-violet" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#818CF8"/><stop offset="1" stop-color="#C084FC"/></linearGradient>
+    <filter id="w-grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .016 0"/></filter>
+    <filter id="w-shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity=".4"/></filter>
+
+    <clipPath id="w-flagshipClip"><rect x="36" y="36" width="1328" height="370" rx="28"/></clipPath>
+    <clipPath id="w-card2Clip"><rect x="36" y="438" width="648" height="252" rx="26"/></clipPath>
+    <clipPath id="w-card3Clip"><rect x="716" y="438" width="648" height="252" rx="26"/></clipPath>
+  </defs>
+
+  <rect width="1400" height="740" rx="34" fill="url(#w-bg)"/>
+  <rect width="1400" height="740" rx="34" fill="url(#w-grain)"/>
+  <g class="drift-a"><rect width="1400" height="740" rx="34" fill="url(#w-ambientA)"/></g>
+  <g class="drift-b"><rect width="1400" height="740" rx="34" fill="url(#w-ambientB)"/></g>
+
+  <!-- flagship -->
+  <rect x="36" y="36" width="1328" height="370" rx="28" fill="url(#w-glass)" stroke="url(#w-edge)" stroke-width="1.2" filter="url(#w-shadow)"/>
+  <g clip-path="url(#w-flagshipClip)"><rect x="36" y="36" width="300" height="370" fill="url(#w-sheen)" class="sheen1"/></g>
+  <path d="M84 92 C250 72 390 79 560 80 C800 81 1020 64 1260 92" fill="none" stroke="#FFFFFF" stroke-opacity=".05" stroke-width="1"/>
+
+  <!-- route motif: animated flowing path -->
+  <path d="M820 325 C900 260 930 215 1000 210 C1070 205 1100 145 1220 138" fill="none" stroke="url(#w-blue)" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="10 8" class="route-flow"/>
+  <circle cx="820" cy="325" r="5" fill="#5EEAD4" class="node-pulse"/>
+  <circle cx="1000" cy="210" r="4" fill="#38BDF8" class="node-pulse"/>
+  <circle cx="1220" cy="138" r="5" fill="#7DD3FC" class="node-pulse"/>
+
+  <rect x="80" y="66" width="150" height="20" rx="10" fill="#5EEAD4" fill-opacity=".08" stroke="#5EEAD4" stroke-opacity=".3" stroke-width="1"/>
+  <text x="92" y="80" fill="#5EEAD4" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" letter-spacing="2.6">01 · FLAGSHIP</text>
+
+  <text x="80" y="168" fill="#F8FAFC" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter',Arial,sans-serif" font-size="42" font-weight="650" letter-spacing="-1.4">SafeRoute AI</text>
+
+  <text x="80" y="210" fill="#94A3B8" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="16.5">Context-aware road safety and navigation for Hyderabad.</text>
+
+  <text x="80" y="250" fill="#64748B" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="12.5" letter-spacing=".5">React  ·  FastAPI  ·  Python  ·  PostgreSQL</text>
+
+  <text x="80" y="320" fill="#7DD3FC" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="12.5" letter-spacing="1.6">EXPLORE PROJECT ↗</text>
+
+  <!-- card 2: CivicPulse -->
+  <rect x="36" y="438" width="648" height="252" rx="26" fill="url(#w-glass)" stroke="url(#w-edge)" stroke-width="1.1" filter="url(#w-shadow)"/>
+  <g clip-path="url(#w-card2Clip)"><rect x="36" y="438" width="200" height="252" fill="url(#w-sheen)" class="sheen2"/></g>
+  <rect x="74" y="472" width="3" height="20" rx="1.5" fill="url(#w-cyan)"/>
+
+  <g opacity=".55" stroke="url(#w-cyan)" fill="none" class="node-pulse">
+    <path d="M530 560 L577 523 L619 561 L598 594 L547 596 Z" stroke-width="1.6"/>
+    <circle cx="530" cy="560" r="4" fill="#22D3EE" stroke="none"/>
+    <circle cx="577" cy="523" r="4" fill="#22D3EE" stroke="none"/>
+    <circle cx="619" cy="561" r="4" fill="#22D3EE" stroke="none"/>
+    <circle cx="598" cy="594" r="4" fill="#22D3EE" stroke="none"/>
+    <circle cx="547" cy="596" r="4" fill="#22D3EE" stroke="none"/>
+  </g>
+
+  <text x="74" y="502" fill="#38BDF8" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11" letter-spacing="2.6">02</text>
+  <text x="74" y="546" fill="#F8FAFC" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter',Arial,sans-serif" font-size="27" font-weight="650" letter-spacing="-.6">CivicPulse</text>
+  <text x="74" y="580" fill="#94A3B8" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="14.5">Civic response platform connecting</text>
+  <text x="74" y="602" fill="#94A3B8" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="14.5">citizens, volunteers and coordinators.</text>
+  <text x="74" y="646" fill="#64748B" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11.5">REACT · FASTAPI · PYTHON</text>
+  <text x="632" y="654" text-anchor="end" fill="#7DD3FC" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11.5" letter-spacing="1.4">EXPLORE ↗</text>
+
+  <!-- card 3: EpiCast -->
+  <rect x="716" y="438" width="648" height="252" rx="26" fill="url(#w-glass)" stroke="url(#w-edge)" stroke-width="1.1" filter="url(#w-shadow)"/>
+  <g clip-path="url(#w-card3Clip)"><rect x="716" y="438" width="200" height="252" fill="url(#w-sheen)" class="sheen3"/></g>
+  <rect x="754" y="472" width="3" height="20" rx="1.5" fill="url(#w-violet)"/>
+
+  <path d="M1148 630 C1176 600 1190 655 1214 621 C1238 587 1253 660 1276 622 C1298 587 1308 640 1333 608" fill="none" stroke="url(#w-violet)" stroke-opacity=".7" stroke-width="2.2" stroke-linecap="round" class="wave-pulse"/>
+
+  <text x="754" y="502" fill="#38BDF8" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11" letter-spacing="2.6">03</text>
+  <text x="754" y="546" fill="#F8FAFC" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter',Arial,sans-serif" font-size="27" font-weight="650" letter-spacing="-.6">EpiCast</text>
+  <text x="754" y="580" fill="#94A3B8" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="14.5">Epidemic intelligence and forecasting</text>
+  <text x="754" y="602" fill="#94A3B8" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="14.5">platform for monitoring and risk assessment.</text>
+  <text x="754" y="646" fill="#64748B" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11.5">REACT · FASTAPI · ML</text>
+  <text x="1312" y="654" text-anchor="end" fill="#7DD3FC" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11.5" letter-spacing="1.4">EXPLORE ↗</text>
+</svg>

@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 540" width="1400" height="540">
+  <defs>
+    <style>
+      .drift-a{animation:driftA 22s ease-in-out infinite;}
+      .drift-b{animation:driftB 26s ease-in-out infinite;}
+      .breathe{animation:breathe 9s ease-in-out infinite;}
+      .breathe-slow{animation:breathe 14s ease-in-out infinite;}
+      .cursor{animation:blink 1.1s steps(1) infinite;}
+      .dot1{animation:pulse 3.2s ease-in-out infinite;}
+      .dot2{animation:pulse 3.2s ease-in-out .3s infinite;}
+      .dot3{animation:pulse 3.2s ease-in-out .6s infinite;}
+      .sheen{animation:sweep 8s cubic-bezier(.4,0,.2,1) infinite;}
+      @keyframes driftA{0%,100%{transform:translate(0,0)}50%{transform:translate(18px,-14px)}}
+      @keyframes driftB{0%,100%{transform:translate(0,0)}50%{transform:translate(-22px,16px)}}
+      @keyframes breathe{0%,100%{opacity:.7}50%{opacity:1}}
+      @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+      @keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
+      @keyframes sweep{0%{transform:translateX(-120%) skewX(-12deg)}30%,100%{transform:translateX(220%) skewX(-12deg)}}
+    </style>
+
+    <linearGradient id="h-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05070B"/>
+      <stop offset=".5" stop-color="#0A121C"/>
+      <stop offset="1" stop-color="#0D1117"/>
+    </linearGradient>
+
+    <radialGradient id="h-ambientA" cx="14%" cy="18%" r="60%">
+      <stop offset="0" stop-color="#2DD4BF" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="h-ambientB" cx="88%" cy="86%" r="55%">
+      <stop offset="0" stop-color="#A78BFA" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="h-blob" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5EEAD4" stop-opacity=".95"/>
+      <stop offset=".38" stop-color="#38BDF8" stop-opacity=".88"/>
+      <stop offset=".7" stop-color="#818CF8" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#C084FC" stop-opacity=".82"/>
+    </linearGradient>
+    <radialGradient id="h-specular" cx="30%" cy="24%" r="38%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="h-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".05"/>
+      <stop offset=".45" stop-color="#FFFFFF" stop-opacity=".016"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity=".006"/>
+    </linearGradient>
+    <linearGradient id="h-edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".30"/>
+      <stop offset=".4" stop-color="#5EEAD4" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity=".05"/>
+    </linearGradient>
+    <linearGradient id="h-text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F8FAFC"/>
+      <stop offset=".6" stop-color="#EFF8FF"/>
+      <stop offset="1" stop-color="#BAE6FD"/>
+    </linearGradient>
+    <linearGradient id="h-sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#FFFFFF" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="h-blurXL"><feGaussianBlur stdDeviation="46"/></filter>
+    <filter id="h-blurBlob" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.5"/></filter>
+    <filter id="h-shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="22" stdDeviation="30" flood-color="#000000" flood-opacity=".5"/></filter>
+    <filter id="h-textShadow" x="-20%" y="-40%" width="140%" height="180%"><feDropShadow dx="0" dy="2" stdDeviation="10" flood-color="#020409" flood-opacity=".65"/></filter>
+    <filter id="h-grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .018 0"/></filter>
+
+    <clipPath id="h-panelClip"><rect x="52" y="44" width="1296" height="452" rx="34"/></clipPath>
+    <clipPath id="h-blobClip"><path d="M 887.23 255.00 C 895.29 291.93 898.51 354.50 876.69 383.37 C 854.86 412.24 794.93 421.32 756.29 428.24 C 717.64 435.15 675.58 438.19 644.81 424.86 C 614.04 411.52 593.68 376.54 571.67 348.24 C 549.67 319.93 520.83 291.93 512.77 255.00 C 504.71 218.07 501.49 155.50 523.31 126.63 C 545.14 97.76 605.07 88.68 643.71 81.76 C 682.36 74.85 724.42 71.81 755.19 85.14 C 785.96 98.48 806.32 133.46 828.33 161.76 C 850.33 190.07 879.17 218.07 887.23 255.00 Z"/></clipPath>
+  </defs>
+
+  <rect width="1400" height="540" rx="38" fill="url(#h-bg)"/>
+  <rect width="1400" height="540" rx="38" fill="url(#h-grain)"/>
+  <g class="drift-a"><rect width="1400" height="540" rx="38" fill="url(#h-ambientA)"/></g>
+  <g class="drift-b"><rect width="1400" height="540" rx="38" fill="url(#h-ambientB)"/></g>
+
+  <!-- signature liquid blob -->
+  <g filter="url(#h-blurBlob)" opacity=".8">
+    <path fill="url(#h-blob)" d="M 887.23 255.00 C 895.29 291.93 898.51 354.50 876.69 383.37 C 854.86 412.24 794.93 421.32 756.29 428.24 C 717.64 435.15 675.58 438.19 644.81 424.86 C 614.04 411.52 593.68 376.54 571.67 348.24 C 549.67 319.93 520.83 291.93 512.77 255.00 C 504.71 218.07 501.49 155.50 523.31 126.63 C 545.14 97.76 605.07 88.68 643.71 81.76 C 682.36 74.85 724.42 71.81 755.19 85.14 C 785.96 98.48 806.32 133.46 828.33 161.76 C 850.33 190.07 879.17 218.07 887.23 255.00 Z">
+      <animate attributeName="d" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 887.23 255.00 C 895.29 291.93 898.51 354.50 876.69 383.37 C 854.86 412.24 794.93 421.32 756.29 428.24 C 717.64 435.15 675.58 438.19 644.81 424.86 C 614.04 411.52 593.68 376.54 571.67 348.24 C 549.67 319.93 520.83 291.93 512.77 255.00 C 504.71 218.07 501.49 155.50 523.31 126.63 C 545.14 97.76 605.07 88.68 643.71 81.76 C 682.36 74.85 724.42 71.81 755.19 85.14 C 785.96 98.48 806.32 133.46 828.33 161.76 C 850.33 190.07 879.17 218.07 887.23 255.00 Z;
+      M 904.78 255.00 C 908.34 290.86 882.61 338.74 858.75 370.34 C 834.89 401.94 796.03 439.28 761.60 444.59 C 727.17 449.91 685.34 417.18 652.17 402.22 C 619.00 387.26 588.75 379.37 562.59 354.84 C 536.43 330.30 498.77 290.86 495.22 255.00 C 491.66 219.14 517.39 171.26 541.25 139.66 C 565.11 108.06 603.97 70.72 638.40 65.41 C 672.83 60.09 714.66 92.82 747.83 107.78 C 781.00 122.74 811.25 130.63 837.41 155.16 C 863.57 179.70 901.23 219.14 904.78 255.00 Z;
+      M 893.68 255.00 C 897.32 292.18 888.96 350.65 864.42 374.46 C 839.87 398.27 784.28 385.57 746.42 397.86 C 708.55 410.14 671.09 453.01 637.23 448.18 C 603.37 443.35 562.18 401.08 543.25 368.88 C 524.33 336.69 520.04 290.32 523.68 255.00 C 527.32 219.68 547.01 191.81 565.08 156.98 C 583.15 122.14 601.00 56.08 632.08 45.97 C 663.16 35.85 716.48 78.71 751.57 96.29 C 786.65 113.86 818.90 124.95 842.59 151.40 C 866.27 177.86 890.04 217.82 893.68 255.00 Z;
+      M 865.55 255.00 C 864.97 291.82 867.06 330.88 850.30 364.20 C 833.53 397.51 798.37 447.34 764.95 454.90 C 731.53 462.45 684.89 425.18 649.80 409.50 C 614.71 393.81 580.11 386.53 554.41 360.78 C 528.70 335.03 496.12 290.68 495.55 255.00 C 494.97 219.32 525.12 172.05 550.96 146.72 C 576.80 121.38 615.08 117.86 650.61 103.00 C 686.14 88.15 730.28 50.89 764.14 57.61 C 797.99 64.32 836.84 110.40 853.74 143.30 C 870.64 176.20 866.12 218.18 865.55 255.00 Z;
+      M 887.23 255.00 C 895.29 291.93 898.51 354.50 876.69 383.37 C 854.86 412.24 794.93 421.32 756.29 428.24 C 717.64 435.15 675.58 438.19 644.81 424.86 C 614.04 411.52 593.68 376.54 571.67 348.24 C 549.67 319.93 520.83 291.93 512.77 255.00 C 504.71 218.07 501.49 155.50 523.31 126.63 C 545.14 97.76 605.07 88.68 643.71 81.76 C 682.36 74.85 724.42 71.81 755.19 85.14 C 785.96 98.48 806.32 133.46 828.33 161.76 C 850.33 190.07 879.17 218.07 887.23 255.00 Z"/>
+    </path>
+    <g clip-path="url(#h-blobClip)">
+      <ellipse cx="610" cy="155" rx="120" ry="90" fill="url(#h-specular)" class="breathe-slow"/>
+    </g>
+  </g>
+  <path fill="none" stroke="#FFFFFF" stroke-opacity=".22" stroke-width="1.3" opacity=".85" d="M 887.23 255.00 C 895.29 291.93 898.51 354.50 876.69 383.37 C 854.86 412.24 794.93 421.32 756.29 428.24 C 717.64 435.15 675.58 438.19 644.81 424.86 C 614.04 411.52 593.68 376.54 571.67 348.24 C 549.67 319.93 520.83 291.93 512.77 255.00 C 504.71 218.07 501.49 155.50 523.31 126.63 C 545.14 97.76 605.07 88.68 643.71 81.76 C 682.36 74.85 724.42 71.81 755.19 85.14 C 785.96 98.48 806.32 133.46 828.33 161.76 C 850.33 190.07 879.17 218.07 887.23 255.00 Z">
+    <animate attributeName="d" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 887.23 255.00 C 895.29 291.93 898.51 354.50 876.69 383.37 C 854.86 412.24 794.93 421.32 756.29 428.24 C 717.64 435.15 675.58 438.19 644.81 424.86 C 614.04 411.52 593.68 376.54 571.67 348.24 C 549.67 319.93 520.83 291.93 512.77 255.00 C 504.71 218.07 501.49 155.50 523.31 126.63 C 545.14 97.76 605.07 88.68 643.71 81.76 C 682.36 74.85 724.42 71.81 755.19 85.14 C 785.96 98.48 806.32 133.46 828.33 161.76 C 850.33 190.07 879.17 218.07 887.23 255.00 Z;
+      M 904.78 255.00 C 908.34 290.86 882.61 338.74 858.75 370.34 C 834.89 401.94 796.03 439.28 761.60 444.59 C 727.17 449.91 685.34 417.18 652.17 402.22 C 619.00 387.26 588.75 379.37 562.59 354.84 C 536.43 330.30 498.77 290.86 495.22 255.00 C 491.66 219.14 517.39 171.26 541.25 139.66 C 565.11 108.06 603.97 70.72 638.40 65.41 C 672.83 60.09 714.66 92.82 747.83 107.78 C 781.00 122.74 811.25 130.63 837.41 155.16 C 863.57 179.70 901.23 219.14 904.78 255.00 Z;
+      M 893.68 255.00 C 897.32 292.18 888.96 350.65 864.42 374.46 C 839.87 398.27 784.28 385.57 746.42 397.86 C 708.55 410.14 671.09 453.01 637.23 448.18 C 603.37 443.35 562.18 401.08 543.25 368.88 C 524.33 336.69 520.04 290.32 523.68 255.00 C 527.32 219.68 547.01 191.81 565.08 156.98 C 583.15 122.14 601.00 56.08 632.08 45.97 C 663.16 35.85 716.48 78.71 751.57 96.29 C 786.65 113.86 818.90 124.95 842.59 151.40 C 866.27 177.86 890.04 217.82 893.68 255.00 Z;
+      M 865.55 255.00 C 864.97 291.82 867.06 330.88 850.30 364.20 C 833.53 397.51 798.37 447.34 764.95 454.90 C 731.53 462.45 684.89 425.18 649.80 409.50 C 614.71 393.81 580.11 386.53 554.41 360.78 C 528.70 335.03 496.12 290.68 495.55 255.00 C 494.97 219.32 525.12 172.05 550.96 146.72 C 576.80 121.38 615.08 117.86 650.61 103.00 C 686.14 88.15 730.28 50.89 764.14 57.61 C 797.99 64.32 836.84 110.40 853.74 143.30 C 870.64 176.20 866.12 218.18 865.55 255.00 Z;
+      M 887.23 255.00 C 895.29 291.93 898.51 354.50 876.69 383.37 C 854.86 412.24 794.93 421.32 756.29 428.24 C 717.64 435.15 675.58 438.19 644.81 424.86 C 614.04 411.52 593.68 376.54 571.67 348.24 C 549.67 319.93 520.83 291.93 512.77 255.00 C 504.71 218.07 501.49 155.50 523.31 126.63 C 545.14 97.76 605.07 88.68 643.71 81.76 C 682.36 74.85 724.42 71.81 755.19 85.14 C 785.96 98.48 806.32 133.46 828.33 161.76 C 850.33 190.07 879.17 218.07 887.23 255.00 Z"/>
+  </path>
+
+  <!-- glass panel -->
+  <rect x="52" y="44" width="1296" height="452" rx="34" fill="url(#h-glass)" stroke="url(#h-edge)" stroke-width="1.2" filter="url(#h-shadow)"/>
+  <path d="M86 90 C255 54 468 70 650 71 C878 71 1088 55 1262 88" fill="none" stroke="#FFFFFF" stroke-opacity=".07" stroke-width="1.1"/>
+  <g clip-path="url(#h-panelClip)">
+    <rect x="52" y="44" width="260" height="452" fill="url(#h-sheen)" class="sheen"/>
+  </g>
+
+  <!-- tri-dot accent -->
+  <circle cx="104" cy="98" r="4" fill="#5EEAD4" class="dot1"/>
+  <circle cx="118" cy="98" r="4" fill="#5EEAD4" class="dot2"/>
+  <circle cx="132" cy="98" r="4" fill="#5EEAD4" class="dot3"/>
+
+  <!-- name -->
+  <text x="700" y="248" text-anchor="middle" fill="url(#h-text)" filter="url(#h-textShadow)"
+        font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter',Arial,sans-serif"
+        font-size="62" font-weight="650" letter-spacing="-2.2">ALI MOHAMMED LALANI</text>
+
+  <!-- metadata -->
+  <text x="700" y="294" text-anchor="middle" fill="#94A3B8" filter="url(#h-textShadow)"
+        font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace"
+        font-size="13" letter-spacing="3">COMPUTER SCIENCE  ·  ARTIFICIAL INTELLIGENCE</text>
+
+  <!-- divider -->
+  <rect x="610" y="332" width="180" height="1.4" rx="1" fill="url(#h-edge)" opacity=".6"/>
+
+  <!-- tagline with native cursor -->
+  <text x="700" y="378" text-anchor="middle" fill="#BAE6FD" filter="url(#h-textShadow)"
+        font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif"
+        font-size="19" font-weight="500" letter-spacing="-.2">Building software. Exploring what&#8217;s next.<tspan class="cursor" fill="#5EEAD4" font-weight="700"> |</tspan></text>
+
+  <!-- footer -->
+  <text x="700" y="480" text-anchor="middle" fill="#64748B"
+        font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace"
+        font-size="11.5" letter-spacing="3">SOFTWARE&#160;&#160;·&#160;&#160;SYSTEMS&#160;&#160;·&#160;&#160;AI&#160;/&#160;ML</text>
+</svg>

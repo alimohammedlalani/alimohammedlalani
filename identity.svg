@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 440" width="1400" height="440">
+  <defs>
+    <style>
+      .drift-a{animation:driftA 24s ease-in-out infinite;}
+      .drift-b{animation:driftB 20s ease-in-out infinite;}
+      .sheen{animation:sweep 9s cubic-bezier(.4,0,.2,1) 1s infinite;}
+      .glow-pulse{animation:pulse 5s ease-in-out infinite;}
+      @keyframes driftA{0%,100%{transform:translate(0,0)}50%{transform:translate(-16px,10px)}}
+      @keyframes driftB{0%,100%{transform:translate(0,0)}50%{transform:translate(14px,-10px)}}
+      @keyframes sweep{0%{transform:translateX(-120%) skewX(-12deg)}30%,100%{transform:translateX(220%) skewX(-12deg)}}
+      @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+    </style>
+
+    <linearGradient id="i-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070A10"/>
+      <stop offset=".55" stop-color="#0B121C"/>
+      <stop offset="1" stop-color="#0D1117"/>
+    </linearGradient>
+    <radialGradient id="i-ambientA" cx="10%" cy="16%" r="55%">
+      <stop offset="0" stop-color="#38BDF8" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="i-ambientB" cx="92%" cy="90%" r="50%">
+      <stop offset="0" stop-color="#A78BFA" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="i-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".055"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity=".012"/>
+    </linearGradient>
+    <linearGradient id="i-edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5EEAD4" stop-opacity=".26"/>
+      <stop offset=".55" stop-color="#FFFFFF" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#818CF8" stop-opacity=".14"/>
+    </linearGradient>
+    <linearGradient id="i-sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#FFFFFF" stop-opacity=".06"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="i-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5EEAD4"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="i-accent2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#818CF8"/>
+      <stop offset="1" stop-color="#C084FC"/>
+    </linearGradient>
+    <filter id="i-grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .016 0"/></filter>
+    <clipPath id="i-panelClip"><rect x="28" y="26" width="1344" height="388" rx="28"/></clipPath>
+  </defs>
+
+  <rect width="1400" height="440" rx="32" fill="url(#i-bg)"/>
+  <rect width="1400" height="440" rx="32" fill="url(#i-grain)"/>
+  <g class="drift-a"><rect width="1400" height="440" rx="32" fill="url(#i-ambientA)"/></g>
+  <g class="drift-b"><rect width="1400" height="440" rx="32" fill="url(#i-ambientB)"/></g>
+
+  <rect x="28" y="26" width="1344" height="388" rx="28" fill="url(#i-glass)" stroke="url(#i-edge)" stroke-width="1.2"/>
+  <g clip-path="url(#i-panelClip)"><rect x="28" y="26" width="260" height="388" fill="url(#i-sheen)" class="sheen"/></g>
+
+  <text x="78" y="82" fill="#5EEAD4" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11.5" letter-spacing="3">01 / IDENTITY</text>
+
+  <text x="78" y="154" fill="#F8FAFC" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter',Arial,sans-serif" font-size="33" font-weight="600" letter-spacing="-.7">Computer Science &amp; Artificial Intelligence student</text>
+
+  <text x="78" y="199" fill="#94A3B8" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="16.5">building real software while going deeper into software engineering,</text>
+  <text x="78" y="226" fill="#94A3B8" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="16.5">backend systems, and AI/ML.</text>
+
+  <line x1="700" y1="272" x2="700" y2="368" stroke="#FFFFFF" stroke-opacity=".08"/>
+
+  <!-- SWE icon: code brackets -->
+  <g transform="translate(78,272)" stroke="url(#i-accent)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="glow-pulse">
+    <path d="M8 4 L1 12 L8 20"/>
+    <path d="M22 4 L29 12 L22 20"/>
+  </g>
+  <text x="118" y="288" fill="#7DD3FC" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11.5" letter-spacing="2.5">SOFTWARE ENGINEERING</text>
+  <text x="78" y="322" fill="#CBD5E1" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="14.5">Full-stack applications, APIs,</text>
+  <text x="78" y="345" fill="#CBD5E1" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="14.5">and systems that work beyond the screen.</text>
+
+  <!-- AI/ML icon: neural nodes -->
+  <g transform="translate(755,272)" stroke="url(#i-accent2)" stroke-width="2" fill="none" class="glow-pulse">
+    <circle cx="4" cy="4" r="3.2"/>
+    <circle cx="4" cy="18" r="3.2"/>
+    <circle cx="24" cy="11" r="3.6"/>
+    <line x1="7" y1="5.5" x2="20.5" y2="10"/>
+    <line x1="7" y1="16.5" x2="20.5" y2="12"/>
+  </g>
+  <text x="795" y="288" fill="#7DD3FC" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11.5" letter-spacing="2.5">AI / ML</text>
+  <text x="755" y="322" fill="#CBD5E1" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="14.5">Building stronger foundations in</text>
+  <text x="755" y="345" fill="#CBD5E1" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Arial,sans-serif" font-size="14.5">machine learning and intelligent systems.</text>
+</svg>
