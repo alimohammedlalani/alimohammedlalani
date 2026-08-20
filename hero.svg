@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 500" width="1400" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06111B"/>
+      <stop offset="0.52" stop-color="#0B1824"/>
+      <stop offset="1" stop-color="#0D1117"/>
+    </linearGradient>
+    <radialGradient id="blueGlow" cx="18%" cy="30%" r="72%">
+      <stop offset="0" stop-color="#38BDF8" stop-opacity=".34"/>
+      <stop offset=".42" stop-color="#22D3EE" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="indigoGlow" cx="90%" cy="88%" r="58%">
+      <stop offset="0" stop-color="#818CF8" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#818CF8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".075"/>
+      <stop offset=".5" stop-color="#FFFFFF" stop-opacity=".03"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity=".018"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".22"/>
+      <stop offset=".35" stop-color="#38BDF8" stop-opacity=".20"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity=".06"/>
+    </linearGradient>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="20" stdDeviation="28" flood-color="#000000" flood-opacity=".45"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="500" rx="36" fill="url(#bg)"/>
+  <rect width="1400" height="500" rx="36" fill="url(#blueGlow)"/>
+  <rect width="1400" height="500" rx="36" fill="url(#indigoGlow)"/>
+
+  <!-- ambient light -->
+  <ellipse cx="270" cy="105" rx="320" ry="170" fill="#38BDF8" opacity=".12" filter="url(#blur)"/>
+  <ellipse cx="1135" cy="390" rx="280" ry="160" fill="#6366F1" opacity=".07" filter="url(#blur)"/>
+
+  <!-- glass panel -->
+  <rect x="55" y="48" width="1290" height="404" rx="30" fill="url(#glass)" stroke="url(#edge)" stroke-width="1.2" filter="url(#shadow)"/>
+
+  <!-- inner highlight -->
+  <path d="M88 92 C260 55 470 72 650 73 C875 73 1085 56 1260 89"
+        fill="none" stroke="#FFFFFF" stroke-opacity=".075" stroke-width="1.2"/>
+
+  <!-- tiny accent -->
+  <circle cx="104" cy="101" r="4" fill="#38BDF8" opacity=".9"/>
+  <circle cx="118" cy="101" r="4" fill="#38BDF8" opacity=".45"/>
+  <circle cx="132" cy="101" r="4" fill="#38BDF8" opacity=".2"/>
+
+  <!-- primary name -->
+  <text x="700" y="230"
+        text-anchor="middle"
+        fill="#F8FAFC"
+        font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif"
+        font-size="58"
+        font-weight="600"
+        letter-spacing="-2">
+    ALI MOHAMMED LALANI
+  </text>
+
+  <!-- metadata -->
+  <text x="700" y="278"
+        text-anchor="middle"
+        fill="#94A3B8"
+        font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif"
+        font-size="15"
+        letter-spacing="2.5">
+    COMPUTER SCIENCE  •  ARTIFICIAL INTELLIGENCE
+  </text>
+
+  <!-- subtle bottom glow -->
+  <rect x="565" y="325" width="270" height="2" rx="1" fill="url(#edge)" opacity=".5"/>
+
+  <!-- tiny footer note -->
+  <text x="700" y="370"
+        text-anchor="middle"
+        fill="#64748B"
+        font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif"
+        font-size="12"
+        letter-spacing="2">
+    SOFTWARE  ·  SYSTEMS  ·  AI / ML
+  </text>
+</svg>
